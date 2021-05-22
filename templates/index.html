@@ -91,6 +91,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             font-style: bold;
             background-color: black;
+
         }
 
         input:focus {
@@ -144,7 +145,7 @@
 
     <body>
         <div class="container">
-            <pre id="demo"><code class="language-json"></code></pre>
+            <pre id="demo">Press Enter To Trigger Api Call</code></pre>
         </div>
         <center>
             <form method="post" onsubmit="myFunction();return false">
@@ -158,9 +159,6 @@
         </center>
 
         <script>
-            $("#prospects_form").submit(function (e) {
-                e.preventDefault();
-            });
             function myFunction() {
                 var country = document.getElementById("country").value;
                 const Http = new XMLHttpRequest();
@@ -171,6 +169,7 @@
                 Http.onreadystatechange = (e) => {
                     var data = Http.responseText;
                     document.getElementById("demo").innerText = data;
+                    // document.getElementById("demo").textContent = JSON.stringify(data, undefined, 2);
 
                 }
                 var x = document.getElementById("country").value;
