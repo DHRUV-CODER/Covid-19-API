@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link href="themes/prism.css" rel="stylesheet" />
+    <meta property="og:title" content="Covid 19 Stats" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://Covid-19-API.dhruvnation1.repl.co" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80" />
+    <meta property="og:description" content="⭐ Free Api Providing You Stats ⭐ Works 24/7 ⭐ Precise Data" />
+    <meta name="theme-color" content="#000000">
+
+<!-- Include this to make the og:image larger -->
+<meta name="twitter:card" content="summary_large_image">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            height: 100vh;
+
+            background: linear-gradient(-45deg, #f64f59, #c471ed, #12c2e9);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            overflow-y: hidden;
+            /* Hide vertical scrollbar */
+            overflow-x: hidden;
+            color: antiquewhite;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            /* Hide horizontal scrollbar */
+        }
+
+        p {
+            color: black;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            background-color: gainsboro;
+            border: 2px solid black;
+            border-radius: 6px;
+            font-size: 25px;
+        }
+
+
+        input {
+
+            color: Black;
+            background-color: whitesmoke;
+
+        }
+
+        input:focus {
+            outline: none !important;
+            border-color: whitesmoke;
+            box-shadow: 0 0 10px white;
+        }
+
+        /* Works on Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: grey black;
+        }
+
+        /* Works on Chrome, Edge, and Safari */
+        *::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: black;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            border-radius: 20px;
+            border: 2px solid black;
+        }
+
+        .container {
+            max-width: 955px;
+            border: 1px solid black;
+            margin: auto;
+            height: 60vh;
+            padding: 33px;
+            overflow-y: auto;
+            margin-bottom: 23px;
+            border-radius: 12px;
+            color: greenyellow;
+            font-size: 15px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-style: bold;
+            background-color: black;
+        }
+
+        input:focus {
+            outline: none !important;
+            border-color: black;
+            box-shadow: 0 0 10px black;
+        }
+
+        textarea:focus {
+            outline: none !important;
+            border-color: black;
+            box-shadow: 0 0 10px black;
+        }
+
+        #country {
+            width: 25%;
+            border: 2px solid black;
+            border-radius: 6px;
+            height: 34px;
+            background-color: rgb(24, 21, 21);
+            color: antiquewhite;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+            padding: 1px;
+            margin: auto;
+            margin-bottom: auto;
+
+        }
+
+        #btn {
+            color: white;
+            border-radius: 6px;
+            background-color: black;
+            border: 2px solid whitesmoke;
+            cursor: pointer;
+            border-radius: 6px;
+            height: 40px;
+        }
+        pre {
+            color: greenyellow;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="prism.js"></script>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <pre id="demo"><code class="language-json"></code></pre>
+        </div>
+        <center>
+            <form method="post" onsubmit="myFunction();return false">
+                <input type="text" id="country" name="country" placeholder="Enter Country Name">
+                <button name="data" id="btn" type="button" onclick="myFunction()">find</button>
+
+            </form>
+            <div class="link">
+                <p id="link">Empty Please Enter Country</p>
+            </div>
+        </center>
+
+        <script>
+            $("#prospects_form").submit(function (e) {
+                e.preventDefault();
+            });
+            function myFunction() {
+                var country = document.getElementById("country").value;
+                const Http = new XMLHttpRequest();
+                const url = `https://Covid-19-API.dhruvnation1.repl.co/country=${country}`;
+                Http.open("GET", url);
+                Http.send();
+
+                Http.onreadystatechange = (e) => {
+                    var data = Http.responseText;
+                    document.getElementById("demo").innerText = data;
+
+                }
+                var x = document.getElementById("country").value;
+                document.getElementById("link").innerHTML = "https://Covid-19-API.dhruvnation1.repl.co/country=" + x;
+            }
+
+        </script>
+    </body>
+
+</html>
