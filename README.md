@@ -24,12 +24,13 @@
 >https://cornavirus-stats.herokuapp.com/worldwide
 
 
-# More
+# More On Endpoints
 
 > <img width="593" alt="img4" src="https://user-images.githubusercontent.com/60794694/119262763-1807c780-bbe5-11eb-8ee3-d37f54ec9862.PNG">
 > <img width="826" alt="img5" src="https://user-images.githubusercontent.com/60794694/119262764-18a05e00-bbe5-11eb-87e3-5c659dffc766.PNG">
 
-> Error Handling
+# Error Handling
+
 > <img width="585" alt="img6" src="https://user-images.githubusercontent.com/60794694/119262772-2524b680-bbe5-11eb-8c18-bf457aaf5770.PNG">
 
 
