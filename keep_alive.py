@@ -49,7 +49,7 @@ def country(country):
             'case_stats' : {
                 'Total_Cases' : data[0],
                 'Deaths' : data[1],
-                'Recoverved' : data[2],
+                'Recovered' : data[2],
                 'last_updates' : last_updated,
             },
             'uri' : {
@@ -98,7 +98,7 @@ def earth():
         'case_stats' : {
             'Total_Cases' : data[0],
             'Deaths' : data[1],
-            'Recoverved' : data[2],
+            'Recovered' : data[2],
             'last_updates' : last_updated,
         },
         'uri' : {
