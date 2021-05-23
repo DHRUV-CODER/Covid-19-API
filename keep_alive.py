@@ -6,10 +6,38 @@ from flask import Flask, jsonify, render_template,request,redirect,url_for
 
 app = Flask(__name__)
 
+url = "https://www.worldometers.info/coronavirus/"
+result = requests.get(url)
+
+soup = bs4.BeautifulSoup(result.text,'lxml')
+cases = soup.find_all('div', class_='maincounter-number')
+links = soup.find('div', {'style': 'display:inline'})
+latest_updated = soup.find('div', class_='news_date')
+
+try:
+    last_updated = latest_updated.text
+except:
+    last_updated = "Not Provided"
+
+data = []
+for i in cases:
+    span = i.find('span')
+    data.append(span.string)
+
+flag = "https://static.wixstatic.com/media/2cd43b_af35a03a70e144ddba269287704a6465~mv2.png/v1/fill/w_256,h_256,q_90/2cd43b_af35a03a70e144ddba269287704a6465~mv2.png"
+
+
+Total_Cases = data[0]
+Deaths = data[1]
+Recovered = data[2]
+
+t1 = Total_Cases.replace(",","")
+t2 = Deaths.replace(",","")
+t3 = Recovered.replace(",","")
 
 @app.route('/')
 def home():
-	return render_template("index.html")
+	return render_template("index.html", ttl=t1 ,deaths=t2,recov=t3)
 
 @app.route("/sup")
 def hi():
