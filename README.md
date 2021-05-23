@@ -6,7 +6,7 @@
 
 
 
-⚠ Try Not To Use **heroku's endpoint** Not Frequently Updates , Use The Above One
+⚠ Try Not To Use **heroku's endpoint** Not Frequently Updated , Use The Above One
 
 
 >https://cornavirus-stats.herokuapp.com/country=india
