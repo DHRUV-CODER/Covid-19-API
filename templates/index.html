@@ -2,8 +2,12 @@
 <html lang="en">
 
 <head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
-	<link href="themes/prism.css" rel="stylesheet" />
+	<!-- <link href="themes/prism.css" rel="stylesheet" /> -->
 	<meta property="og:title" content="Covid 19 Stats" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://Covid-19-API.dhruvnation1.repl.co" />
@@ -22,6 +26,7 @@
 	<style>
 		body {
 			height: auto;
+			width: auto;
 
 			background: linear-gradient(-45deg, #f64f59, #c471ed, #12c2e9);
 			/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -94,6 +99,7 @@
 			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 			font-style: bold;
 			background-color: black;
+			box-shadow: 0px 2px 20px 0px black;
 
 		}
 
@@ -102,7 +108,7 @@
 			max-width: 955px;
 			/* border: 1px solid black; */
 			margin: auto;
-			height: 30vh;
+			height: 40vh;
 			padding: 33px;
 			overflow-y: auto;
 			margin-bottom: 23px;
@@ -112,6 +118,24 @@
 			font-family: system-ui;
 			font-style: bold;
 			background: linear-gradient(352deg, #f64f59, #c471ed, #12c2e9);
+
+		}
+
+		.charts {
+			max-width: 955px;
+			border: 2px solid black;
+			margin: auto;
+			height: 110vh;
+			padding: 33px;
+			overflow-y: auto;
+			margin-bottom: 23px;
+			border-radius: 12px;
+			color: black;
+			font-size: 15px;
+			font-family: system-ui;
+			font-style: bold;
+			background: linear-gradient(167deg, #f64f59, #c471ed, #12c2e9);
+			box-shadow: 10px 8px #d068c7;
 
 		}
 
@@ -143,14 +167,14 @@
 		}
 
 		#btn {
-			display: none;
-			color: white;
+			/* display: none; */
+			/* color: white; */
+			/* border-radius: 6px; */
+			/* background-color: black; */
+			/* border: 2px solid whitesmoke; */
+			/* cursor: pointer; */
 			border-radius: 6px;
-			background-color: black;
-			border: 2px solid whitesmoke;
-			cursor: pointer;
-			border-radius: 6px;
-			height: 40px;
+			/* height: 40px; */
 		}
 
 		p#demo {
@@ -158,7 +182,7 @@
 			color: greenyellow;
 			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 			background-color: black;
-			font-size: 23px;
+			font-size: 20px;
 		}
 
 		h1 {
@@ -210,6 +234,26 @@
 			background-color: transparent;
 			color: black;
 		}
+
+		.curved-div {
+			background: transparent;
+			color: #FFF;
+			text-align: center;
+		}
+
+		.curved-div h1 {
+			font-size: 6rem;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		}
+
+		.curved-div p {
+			font-size: 1rem;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		}
+
+		.curved-div svg {
+			display: block;
+		}
 	</style>
 	<!--Load the AJAX API-->
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">
@@ -242,7 +286,8 @@
                         'width':900,
                         'height':600,
                         'backgroundColor': 'transparent',
-                        'is3D':true
+                        'is3D':true,
+                        'fontSize':25,
                        };
 
         // Instantiate and draw our chart, passing in some options.
@@ -253,13 +298,20 @@
 </head>
 
 <body>
-	<script src="prism.js">
+	<!-- <script src="prism.js"> -->
 
 	</script>
 
 	</head>
 
 	<body>
+		<div class="curved-div">
+<svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 190" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(18, 194, 233, 1)" offset="0%"></stop><stop stop-color="rgba(255, 255, 255, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,19L90,76L180,76L270,133L360,0L450,76L540,95L630,95L720,57L810,152L900,38L990,95L1080,76L1170,0L1260,95L1350,19L1440,38L1530,76L1620,76L1710,152L1800,133L1890,114L1980,171L2070,19L2160,76L2160,190L2070,190L1980,190L1890,190L1800,190L1710,190L1620,190L1530,190L1440,190L1350,190L1260,190L1170,190L1080,190L990,190L900,190L810,190L720,190L630,190L540,190L450,190L360,190L270,190L180,190L90,190L0,190Z"></path><defs><linearGradient id="sw-gradient-1" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(196, 113, 237, 1)" offset="0%"></stop><stop stop-color="rgba(255, 255, 255, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 50px); opacity:0.9" fill="url(#sw-gradient-1)" d="M0,76L90,38L180,0L270,133L360,57L450,38L540,152L630,19L720,19L810,19L900,38L990,171L1080,171L1170,19L1260,133L1350,0L1440,114L1530,171L1620,152L1710,38L1800,19L1890,0L1980,171L2070,0L2160,152L2160,190L2070,190L1980,190L1890,190L1800,190L1710,190L1620,190L1530,190L1440,190L1350,190L1260,190L1170,190L1080,190L990,190L900,190L810,190L720,190L630,190L540,190L450,190L360,190L270,190L180,190L90,190L0,190Z"></path></svg>
+		</div>
+
+		<center>
+			<div id="chart_div" class="charts"></div>
+		</center>
 		<div class="container">
 			<p id="demo">Hit Enter To Trigger Api Call</p>
 
@@ -267,15 +319,13 @@
 		<center>
 			<form method="post" onsubmit="myFunction();return false">
 				<input type="text" id="country" name="country" placeholder="Enter Country Name">
-                <button name="data" id="btn" type="button" onclick="myFunction()">find</button>
+                <button name="data" class="w3-btn w3-black" id="btn" type="button" onclick="myFunction()" >find</button>
 
             </form>
             <div class="link">
                 <a href id="link">Empty Please Enter Country</a>
             </div>
-                <!--Div that will hold the pie chart-->
-
-    <div id="chart_div"></div>
+                        <!--Div that will hold the pie chart-->
     		<div class="footer">
 			    <h1 id="endpoints">Endpoints</h1>
 <p ><strong><a href="https://covid-19-api.dhruvnation1.repl.co/country=india" target="_blank">Country Stats</a></strong></p>
@@ -284,6 +334,9 @@
 		</div>
 
         </center>
+        <div class="curved-div">
+<svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 260" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(246, 79, 89, 1)" offset="0%"></stop><stop stop-color="rgba(196, 113, 237, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,26L14.1,39C28.2,52,56,78,85,91C112.9,104,141,104,169,117C197.6,130,226,156,254,138.7C282.4,121,311,61,339,47.7C367.1,35,395,69,424,91C451.8,113,480,121,508,125.7C536.5,130,565,130,593,121.3C621.2,113,649,95,678,108.3C705.9,121,734,165,762,160.3C790.6,156,819,104,847,91C875.3,78,904,104,932,112.7C960,121,988,113,1016,91C1044.7,69,1073,35,1101,39C1129.4,43,1158,87,1186,91C1214.1,95,1242,61,1271,47.7C1298.8,35,1327,43,1355,56.3C1383.5,69,1412,87,1440,95.3C1468.2,104,1496,104,1525,121.3C1552.9,139,1581,173,1609,186.3C1637.6,199,1666,191,1694,182C1722.4,173,1751,165,1779,173.3C1807.1,182,1835,208,1864,186.3C1891.8,165,1920,95,1948,73.7C1976.5,52,2005,78,2019,91L2032.9,104L2032.9,260L2018.8,260C2004.7,260,1976,260,1948,260C1920,260,1892,260,1864,260C1835.3,260,1807,260,1779,260C1750.6,260,1722,260,1694,260C1665.9,260,1638,260,1609,260C1581.2,260,1553,260,1525,260C1496.5,260,1468,260,1440,260C1411.8,260,1384,260,1355,260C1327.1,260,1299,260,1271,260C1242.4,260,1214,260,1186,260C1157.6,260,1129,260,1101,260C1072.9,260,1045,260,1016,260C988.2,260,960,260,932,260C903.5,260,875,260,847,260C818.8,260,791,260,762,260C734.1,260,706,260,678,260C649.4,260,621,260,593,260C564.7,260,536,260,508,260C480,260,452,260,424,260C395.3,260,367,260,339,260C310.6,260,282,260,254,260C225.9,260,198,260,169,260C141.2,260,113,260,85,260C56.5,260,28,260,14,260L0,260Z"></path><defs><linearGradient id="sw-gradient-1" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(231.441, 245.759, 246.348, 1)" offset="0%"></stop><stop stop-color="rgba(196, 113, 237, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 50px); opacity:0.9" fill="url(#sw-gradient-1)" d="M0,104L14.1,95.3C28.2,87,56,69,85,52C112.9,35,141,17,169,39C197.6,61,226,121,254,134.3C282.4,147,311,113,339,91C367.1,69,395,61,424,82.3C451.8,104,480,156,508,151.7C536.5,147,565,87,593,56.3C621.2,26,649,26,678,26C705.9,26,734,26,762,30.3C790.6,35,819,43,847,78C875.3,113,904,173,932,203.7C960,234,988,234,1016,199.3C1044.7,165,1073,95,1101,86.7C1129.4,78,1158,130,1186,125.7C1214.1,121,1242,61,1271,56.3C1298.8,52,1327,104,1355,143C1383.5,182,1412,208,1440,216.7C1468.2,225,1496,217,1525,186.3C1552.9,156,1581,104,1609,73.7C1637.6,43,1666,35,1694,26C1722.4,17,1751,9,1779,43.3C1807.1,78,1835,156,1864,156C1891.8,156,1920,78,1948,73.7C1976.5,69,2005,139,2019,173.3L2032.9,208L2032.9,260L2018.8,260C2004.7,260,1976,260,1948,260C1920,260,1892,260,1864,260C1835.3,260,1807,260,1779,260C1750.6,260,1722,260,1694,260C1665.9,260,1638,260,1609,260C1581.2,260,1553,260,1525,260C1496.5,260,1468,260,1440,260C1411.8,260,1384,260,1355,260C1327.1,260,1299,260,1271,260C1242.4,260,1214,260,1186,260C1157.6,260,1129,260,1101,260C1072.9,260,1045,260,1016,260C988.2,260,960,260,932,260C903.5,260,875,260,847,260C818.8,260,791,260,762,260C734.1,260,706,260,678,260C649.4,260,621,260,593,260C564.7,260,536,260,508,260C480,260,452,260,424,260C395.3,260,367,260,339,260C310.6,260,282,260,254,260C225.9,260,198,260,169,260C141.2,260,113,260,85,260C56.5,260,28,260,14,260L0,260Z"></path></svg>
+		</div>
 
         <script>
             function myFunction() {
@@ -303,7 +356,7 @@
                 var x = document.getElementById("country").value;
                 document.getElementById("link").innerHTML = `<a id="link" href='https://Covid-19-API.dhruvnation1.repl.co/country=${x}' target=\"_blank\">${x}'s Stats , Click Me</a>`;
             }
-
+            console.warn("As You Took Pain To Open Console , I Give You Source Code");
         </script>
 
 
