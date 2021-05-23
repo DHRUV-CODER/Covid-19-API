@@ -50,6 +50,7 @@ def country(country):
                 'Total_Cases' : data[0],
                 'Deaths' : data[1],
                 'Recoverved' : data[2],
+                'last_updates' : last_updated,
             },
             'uri' : {
                 'Flag' : flag,
@@ -98,6 +99,7 @@ def earth():
             'Total_Cases' : data[0],
             'Deaths' : data[1],
             'Recoverved' : data[2],
+            'last_updates' : last_updated,
         },
         'uri' : {
             'Flag' : flag,
